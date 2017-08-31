@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 
-namespace OrangeHrSelenium
+namespace SeleniumGoogleSearch
 {
     class PropertiesHandler
     {
-        private const string myprofile = @"settings\Settings.xml";
+        private const string myprofile = @"Settings.xml";
         private Dictionary<string, string> myprops = null;
 
         private static PropertiesHandler instance;
