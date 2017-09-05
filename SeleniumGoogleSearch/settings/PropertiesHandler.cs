@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
+using System.Reflection;
 
 namespace SeleniumGoogleSearch
 {
@@ -53,10 +54,9 @@ namespace SeleniumGoogleSearch
 
         private void LoadProperties(string file, Dictionary<string, string> props)
         {
-
-            if (!File.Exists(file))
+            string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), file);
+            if (!File.Exists(filePath))
             {
-                var a = Directory.GetCurrentDirectory();
                 Console.WriteLine("Settings.xml doen't exist");
                 Environment.Exit(0);
             }
