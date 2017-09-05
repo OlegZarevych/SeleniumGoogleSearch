@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using SeleniumGoogleSearch.settings;
 
-namespace SeleniumGoogleSearch.Browser
+namespace SeleniumGoogleSearch
 {
     static class Browser
     {
@@ -49,6 +49,7 @@ namespace SeleniumGoogleSearch.Browser
                     break;
             }
             _webDriver.Manage().Window.Maximize();
+            
             // _webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(50)); old implicitly wait
             _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(50);
             return _webDriver;

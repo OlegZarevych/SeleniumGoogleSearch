@@ -7,7 +7,7 @@ namespace SeleniumGoogleSearch
 {
     class PropertiesHandler
     {
-        private const string myprofile = @"Settings.xml";
+        private const string myprofile = @"settings.xml";
         private Dictionary<string, string> myprops = null;
 
         private static PropertiesHandler instance;
@@ -53,8 +53,11 @@ namespace SeleniumGoogleSearch
 
         private void LoadProperties(string file, Dictionary<string, string> props)
         {
+
             if (!File.Exists(file))
             {
+                var a = Directory.GetCurrentDirectory();
+                Console.WriteLine("Settings.xml doen't exist");
                 Environment.Exit(0);
             }
 
