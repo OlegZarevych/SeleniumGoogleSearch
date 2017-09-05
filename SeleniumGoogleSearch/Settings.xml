@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<Settings>
-  <add key="Browser" value="chrome" /> 
-  <add key="Url" value="http://google.com/" />
-</Settings>
