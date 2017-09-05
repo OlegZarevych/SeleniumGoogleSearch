@@ -21,17 +21,18 @@ namespace SeleniumGoogleSearch.Pages
 
         #region PO
         [FindsBy(How = How.XPath, Using = _linkByText)]
-        private IWebElement LinkByText { get; }
+        private IWebElement LinkByText { get; set; }
 
         [FindsBy(How = How.XPath, Using = _resultList)]
-        private IList<IWebElement> ResultList { get; }
+        private IList<IWebElement> ResultList { get; set; }
         #endregion
 
         #region public
 
         public void ResultLinkByText(string text)
         {
-           
+   
+
         }
 
 

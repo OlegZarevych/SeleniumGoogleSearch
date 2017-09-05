@@ -20,17 +20,18 @@ namespace SeleniumGoogleSearch.Pages
         #region PO
         [CacheLookup]
         [FindsBy(How = How.XPath, Using = _searchField)]
-        private IWebElement SearchField { get; }
+        private IWebElement SearchField { get; set; }
 
         [CacheLookup]
         [FindsBy(How = How.XPath, Using = _searchButton)]
-        private IWebElement SearchButton { get; }
+        private IWebElement SearchButton { get; set; }
         #endregion
 
         #region public
         public GoogleSearchResultPage SearchText(string text)
         {
             SearchField.SendKeys(text);
+            SearchButton.Submit();
             return new GoogleSearchResultPage();
 
         }

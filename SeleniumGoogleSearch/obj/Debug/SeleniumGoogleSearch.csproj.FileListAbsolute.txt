@@ -17,4 +17,3 @@ E:\Project\SeleniumGoogleSearch\SeleniumGoogleSearch\bin\Debug\WebDriver.xml
 E:\Project\SeleniumGoogleSearch\SeleniumGoogleSearch\bin\Debug\WebDriver.Support.xml
 E:\Project\SeleniumGoogleSearch\SeleniumGoogleSearch\obj\Debug\SeleniumGoogleSearch.dll
 E:\Project\SeleniumGoogleSearch\SeleniumGoogleSearch\obj\Debug\SeleniumGoogleSearch.pdb
-E:\Project\SeleniumGoogleSearch\SeleniumGoogleSearch\obj\Debug\SeleniumGoogleSearch.csprojResolveAssemblyReference.cache
