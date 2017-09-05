@@ -62,7 +62,7 @@ namespace SeleniumGoogleSearch
             }
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(file);
+            doc.Load(filePath);
             foreach (XmlNode c in doc.ChildNodes)
             {
                 if (c.Name.Equals("Settings"))
