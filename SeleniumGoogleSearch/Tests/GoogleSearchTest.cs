@@ -16,12 +16,11 @@ namespace SeleniumGoogleSearch.Tests
         /// This text search from text in Google and check if in result is Wikipedia 
         /// </summary>
         [Test]
-        public void SearchText()
+        public void SearchedTextShouldBeAtPointZero()
         {
-            GoogleMainPage mp = new GoogleMainPage();
-            var resultPage = mp.SearchText("QA");
-            resultPage.ResultLinkByText("QA");
-
+            string expected = "QA";
+            var resultPage = Page.GoogleMain.SearchText(expected);
+            StringAssert.Contains(expected, resultPage.ResultList[0].Text, "The result list should contains {expected}");
         }
 
         #endregion

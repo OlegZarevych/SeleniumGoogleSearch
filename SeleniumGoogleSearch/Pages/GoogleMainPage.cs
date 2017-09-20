@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace SeleniumGoogleSearch.Pages
 {
-    class GoogleMainPage
+    public class GoogleMainPage
     {
         #region locators
         private const string _searchField = "//input[@id='lst-ib']";
@@ -13,7 +13,7 @@ namespace SeleniumGoogleSearch.Pages
         #region Constructor \ PageFactory
         public GoogleMainPage()
         {
-            PageFactory.InitElements(Browser.Driver, this);
+ //           PageFactory.InitElements(Browser.Driver, this);
         }
         #endregion
 
