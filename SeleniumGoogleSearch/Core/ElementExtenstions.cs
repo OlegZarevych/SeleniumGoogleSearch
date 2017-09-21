@@ -2,10 +2,7 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace SeleniumGoogleSearch.Core
 {
@@ -45,6 +42,20 @@ namespace SeleniumGoogleSearch.Core
         public static void DoubleClick(this IWebElement element)
         {
             new Actions(Browser.GetDriver).DoubleClick(element).Perform();
+        }
+
+        public static void WaitForAjax(this IWebDriver driver, int timeoutSecs = 10, bool throwException = false)
+        {
+            for (var i = 0; i < timeoutSecs; i++)
+            {
+                var ajaxIsComplete = (bool)(driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
+                if (ajaxIsComplete) return;
+                Thread.Sleep(1000);
+            }
+            if (throwException)
+            {
+                throw new Exception("WebDriver timed out waiting for AJAX call to complete");
+            }
         }
     }
 }

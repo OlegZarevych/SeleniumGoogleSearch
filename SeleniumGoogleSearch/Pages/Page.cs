@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium.Support.PageObjects;
-
+using System;
 
 namespace SeleniumGoogleSearch.Pages
 {
@@ -8,7 +8,10 @@ namespace SeleniumGoogleSearch.Pages
         private static T GetPage<T>() where T : new()
         {
             var page = new T();
-            PageFactory.InitElements(Browser.GetDriver, page);
+            //            PageFactory.InitElements(Browser.GetDriver, page);
+            RetryingElementLocator retry = new RetryingElementLocator(Browser.GetDriver, TimeSpan.FromSeconds(5));
+            IPageObjectMemberDecorator decor = new DefaultPageObjectMemberDecorator();
+            PageFactory.InitElements(retry.SearchContext, page, decor);
             return page;
         }
 
