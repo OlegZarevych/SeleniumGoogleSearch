@@ -32,7 +32,7 @@ namespace SeleniumGoogleSearch.Pages
         {
             SearchField.SendKeys(text);
             SearchButton.Submit();
-            return new GoogleSearchResultPage();
+            return Page.GoogleSearchResult;
 
         }
 
