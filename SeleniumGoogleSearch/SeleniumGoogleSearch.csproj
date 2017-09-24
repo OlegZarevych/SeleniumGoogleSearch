@@ -67,6 +67,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Assertion\Test.cs" />
     <Compile Include="Browser\Browser.cs" />
     <Compile Include="Core\ElementExtenstions.cs" />
     <Compile Include="Core\TestBase.cs" />

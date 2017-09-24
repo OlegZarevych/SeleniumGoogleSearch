@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SeleniumGoogleSearch.Assertion;
 using SeleniumGoogleSearch.Core;
 using SeleniumGoogleSearch.Pages;
 using SeleniumGoogleSearch.settings;
@@ -19,7 +20,7 @@ namespace SeleniumGoogleSearch.Tests
         public void SearchedTextShouldBeAtPointZero(string expected)
         {
             GoogleSearchResultPage resultPage = Page.GoogleMain.SearchText(expected);
-            StringAssert.Contains(expected, resultPage.ResultList[0].Text, "The result list should contains {expected}");
+            Test.Perform(expected, resultPage.ResultList[0].Text); 
         }
 
         #endregion
