@@ -24,5 +24,15 @@ namespace SeleniumGoogleSearch.Pages
         {
             get { return GetPage<GoogleSearchResultPage>(); }
         }
+
+        public static GoogleLoginPage Login
+        {
+            get { return GetPage<GoogleLoginPage>(); }
+        }
+
+        public static GoogleRegisterPage Register
+        {
+            get { return GetPage<GoogleRegisterPage>(); }
+        }
     }
 }

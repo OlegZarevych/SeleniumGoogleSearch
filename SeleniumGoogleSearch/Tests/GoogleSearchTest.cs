@@ -23,6 +23,13 @@ namespace SeleniumGoogleSearch.Tests
             Test.Perform(expected, resultPage.ResultList[0].Text); 
         }
 
+        [TestCase("QA")]
+        public void SearchedTextShouldBeAtPointOne(string expected)
+        {
+            GoogleSearchResultPage resultPage = Page.GoogleMain.SearchText(expected);
+            Test.Perform(expected, resultPage.ResultList[1].Text);
+        }
+
         #endregion
     }
 }
