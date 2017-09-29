@@ -10,7 +10,8 @@ namespace SeleniumGoogleSearch.Pages
         private const string _emailInput = "//*[@id='identifierId']";
         private const string _nextButton = "//*[@id='identifierNext']";
         private const string _moreButton = "//*[@id='view_container']//div[@class='IMH1vc lUHSR Hj2jlf']";
-        private const string _signUpButton = "//*[@id='SIGNUP']/..";
+        private const string _signUpLabel = "//content[@class='z80M1']";
+        private const string _signUpButton = ".//*[@id='SIGNUP']/div";
         #endregion
 
         #region PO
@@ -27,7 +28,11 @@ namespace SeleniumGoogleSearch.Pages
         private IWebElement MoreButton { get; set; }
 
         [CacheLookup]
-        [FindsBy(How = How.XPath, Using =_signUpButton)]
+        [FindsBy(How = How.XPath, Using =_signUpLabel)]
+        private IWebElement SignUpLabel { get; set; }
+
+        [CacheLookup]
+        [FindsBy(How = How.XPath, Using = _signUpButton)]
         private IWebElement SignUpButton { get; set; }
         #endregion
 
@@ -46,14 +51,16 @@ namespace SeleniumGoogleSearch.Pages
 
         public GoogleRegisterPage SignUp()
         {
-            SignUpButton.ClickFromJs();
+            SignUpLabel.ClickFromJs();
             return Page.Register;
         }
 
         public GoogleRegisterPage MoreAndSignUp()
         {
             MoreButton.Click();
+            SignUpLabel.Hover();
             SignUpButton.Click();
+
             return Page.Register;
         }
         #endregion
