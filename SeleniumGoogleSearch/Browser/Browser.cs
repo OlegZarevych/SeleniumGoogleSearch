@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.PhantomJS;
 using System;
 using SeleniumGoogleSearch.settings;
 
@@ -45,6 +46,12 @@ namespace SeleniumGoogleSearch
             switch (XmlSettingsProperties.Browser)
             {
                 case "chrome":
+                    _webDriver = new ChromeDriver();
+                    break;
+                case "phantom":
+                    _webDriver = new PhantomJSDriver();
+                    break;
+                default:
                     _webDriver = new ChromeDriver();
                     break;
             }
