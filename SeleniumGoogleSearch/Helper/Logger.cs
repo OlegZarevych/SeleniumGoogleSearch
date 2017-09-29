@@ -27,5 +27,11 @@ namespace SeleniumGoogleSearch.Helper
             Logger.ConsoleLog.Info(msg);
             Logger.FileLog.Info(msg);
         }
+
+        public static void LogError(string msg)
+        {
+            Logger.ConsoleLog.Error(msg);
+            Logger.FileLog.Error(msg);
+        }
     }
 }
