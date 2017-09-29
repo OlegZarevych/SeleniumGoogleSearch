@@ -44,6 +44,17 @@ namespace SeleniumGoogleSearch.Core
             new Actions(Browser.GetDriver).DoubleClick(element).Perform();
         }
 
+        public static void Hover(this IWebElement element)
+        {
+            new Actions(Browser.GetDriver).MoveToElement(element).Perform();
+        }
+
+        public static void HoverAndClick(this IWebElement element)
+        {
+            new Actions(Browser.GetDriver).MoveToElement(element).Perform();
+            element.Click();
+        }
+
         public static void WaitForAjax(this IWebDriver driver, int timeoutSecs = 10, bool throwException = false)
         {
             for (var i = 0; i < timeoutSecs; i++)
