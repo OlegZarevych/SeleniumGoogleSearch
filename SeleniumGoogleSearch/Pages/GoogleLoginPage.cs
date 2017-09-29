@@ -9,8 +9,8 @@ namespace SeleniumGoogleSearch.Pages
         #region locators
         private const string _emailInput = "//*[@id='identifierId']";
         private const string _nextButton = "//*[@id='identifierNext']";
-        private const string _moreButton = "//*[@id='ow175']";
-        private const string _signUpButton = "//*[@id='SIGNUP']";
+        private const string _moreButton = "//*[@id='view_container']//div[@class='IMH1vc lUHSR Hj2jlf']";
+        private const string _signUpButton = "//*[@id='SIGNUP']/..";
         #endregion
 
         #region PO

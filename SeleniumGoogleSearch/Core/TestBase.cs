@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace SeleniumGoogleSearch.Core
 {
-   public class TestBase
+    public class TestBase
     {
         #region setup
         [SetUp]
@@ -16,6 +16,7 @@ namespace SeleniumGoogleSearch.Core
         {
             Browser.Start();
             Browser.Navigate(XmlSettingsProperties.Url);
+            Helper.Logger.LogInfo("Browser started");
         }
 
         [TearDown]

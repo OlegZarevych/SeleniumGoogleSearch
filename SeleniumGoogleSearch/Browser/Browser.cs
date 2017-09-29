@@ -49,7 +49,7 @@ namespace SeleniumGoogleSearch
                     break;
             }
             _webDriver.Manage().Window.Maximize();
-            
+            Helper.Logger.LogInfo("Selected browser -" + XmlSettingsProperties.Browser);
             // _webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(50)); old implicitly wait
             _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(50);
             return _webDriver;
