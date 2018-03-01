@@ -8,6 +8,8 @@ namespace SeleniumGoogleSearch.Core
 {
     public static class ElementExtenstions
     {
+        private static IWebDriver drv = Browser.GetDriver;
+
         public static void EnterText(this IWebElement element, string text)
         {
             element.Clear();
@@ -67,6 +69,16 @@ namespace SeleniumGoogleSearch.Core
             {
                 throw new Exception("WebDriver timed out waiting for AJAX call to complete");
             }
+        }
+
+        public static bool WaitForElementIsDisplayed(this IWebElement element, int timeout = 10)
+        {
+            bool status;
+
+            WebDriverWait wait = new WebDriverWait(drv, TimeSpan.FromSeconds(timeout));
+            status = wait.Until(drv => element.Displayed);
+
+            return status;
         }
     }
 }
