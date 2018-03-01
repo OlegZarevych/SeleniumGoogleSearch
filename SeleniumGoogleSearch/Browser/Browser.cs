@@ -51,6 +51,11 @@ namespace SeleniumGoogleSearch
                 case "phantom":
                     _webDriver = new PhantomJSDriver();
                     break;
+                case "chrome_headless":
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArgument("--headless");
+                    _webDriver = new ChromeDriver(options);
+                    break;
                 default:
                     _webDriver = new ChromeDriver();
                     break;
