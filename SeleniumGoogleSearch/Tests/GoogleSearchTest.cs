@@ -30,6 +30,13 @@ namespace SeleniumGoogleSearch.Tests
             Test.Perform(expected, resultPage.ResultList[1].Text);
         }
 
+        [Test]
+        public void SearchWithoutSubmit()
+        {
+            string expected = "qa";
+            Page.GoogleMain.EnterTextInSearchField(expected);
+            Test.Perform(expected, Page.GoogleMain.SearchResultTextInHelpPopup());
+        }
         #endregion
     }
 }
